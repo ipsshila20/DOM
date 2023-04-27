@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+
+<body>
+    <fieldset>
+        <legend>Que1</legend> Write the code to access element which is having id as "text"
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h3 id="text">Hello Prepbytes</h3> <br>
+        <pre>
+            const getId=document.getElementById("text");
+            console.log(getId);
+            console.log(getId.innerText);
+        </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que2</legend> Write the code to access element which is having tag a "h1"
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h1>Hello World</h1> <br>
+        <pre>
+            const getTag=document.getElementsByTagName("h1")[0];
+            console.log(getTag.innerText);
+        </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que3</legend>Write the code to access element which is having class as "box"
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h1 class="box"> I am a devil in my world</h1> <br>
+        <pre>
+            const getClass=document.getElementsByClassName("box")[0];
+            console.log(getClass.innerText);
+        </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que4</legend> Change the heading from ""Hello"" to ""Hello World"" using DOM functions"
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h1 id="heading"> Hello</h1> <br>
+        <button onclick="changehead()">Change Heading</button>
+        <br>
+        <pre>
+        function changehead (){
+            let heading=document.querySelector("#heading");
+           if(heading.innerHTML==="Hello World"){
+            heading.innerHTML="Hello"
+           }
+           else{
+            heading.innerHTML="Hello World";
+           }
+        }
+       </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que5</legend>Create an HTML page having content as Hello world and a button named Replace Text. When
+        user will click on this button page content should be changed to "Welcome to Elevation academy".
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h3 id="changetext"> Hello World</h3> <br>
+        <button onclick="changeText()"> Replace Text</button> <br>
+        <pre>
+        function changeText(){
+            let text=document.querySelector("#changetext");
+            if(text.innerText==="Hello World"){
+                text.innerText="Welcome to Elevation academy";
+            }
+            else{
+                text.innerText="Hello World";
+            }
+        }
+       </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que6</legend> Add one style attribute and give text color as red and id attribute and give the id value
+        as ""heading"" in the above given h1 tag using DOM functions".
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h2> Hello World</h2> <br>
+        <pre>
+            const color=document.getElementsByTagName("h2")[0];
+            color.setAttribute("id","heading");
+            color.style.color="red";
+        </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que7</legend>Create three cards on HTML page and arrange them using flex property in row or horizontal
+        direction and also create button at the bottom named "Change Flex direction". When user clicks on this button,
+        the cards arrangement should be changed to vertical direction.
+    </fieldset>
+    <fieldset>
+        <div class="flex" id="asch">
+            <div class="box1 bx">Box1</div>
+            <div class="box2 bx">Box2</div>
+            <div class="box3 bx">Box3</div>
+        </div>
+        <button id="changeDirection">Change Flex direction</button>
+        <pre>
+            let btn=document.querySelector("#changeDirection");
+            btn.addEventListener("click",myfunction);
+            function myfunction(){
+                if(flex.style.flexDirection==="column"){
+                            flex.style.flexDirection="row";
+                        }
+                        else{
+                            flex.style.flexDirection="column";
+                        }
+            }
+            const flex=document.getElementsByClassName("flex")[0];
+            let asch=document.getElementById("asch");
+            const box=document.getElementsByClassName("bx");
+             for(i=0; i<box.length ;i++){
+                box[i].addEventListener("click",()=>{
+                  if(asch.flexDirection==="row"){
+                    flex.classList.toggle("toggle");
+                    asch.classList.toggle("flex")
+                  }
+                  else{
+                    flex.classList.toggle("toggle");
+                    asch.classList.toggle("flex")
+                  }
+                })
+             }
+        </pre>
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que8</legend> Write code to implement timer clock using JS -- display HH:MM:SS -- the time should keep
+        updating every second
+    </fieldset>
+    <fieldset>
+        ANS <br>
+        <h1 id="clock"></h1> <br>
+        <pre>
+            let clockshow=document.querySelector("#clock");
+            function clock (){
+                let time=new Date().toLocaleTimeString();
+                clockshow.innerHTML=time;
+            }
+            setInterval(clock,1000)
+            
+        </pre>
+
+    </fieldset>
+    <hr>
+    <fieldset>
+        <legend>Que9</legend> Whats the difference between window vs document?
+    </fieldset>
+    <fieldset>
+        Ans <br>
+        <h4>Document</h4>
+        <p>It is the root element of the document object model.</p>
+        <br>
+        <h4>Window</h4>
+        <p>The window is the global element for all objects, functions, etc.</p>
+    </fieldset>
+    <fieldset>
+        <legend>Game URL</legend>
+        <a href="index2.html">Click Here and Play the Game</a>
+
+    </fieldset>
+
+
+
+
+
+
+
+
+    <script src="dom.js"></script>
+</body>
+
+</html>
